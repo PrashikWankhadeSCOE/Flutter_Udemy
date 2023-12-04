@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(title: const Text('Hello users !')),
           body: const Center(
-            child: TooltipSample(),
+            child: SnackBarExample(),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => debugPrint('Clicked'),
@@ -43,6 +43,27 @@ class TooltipSample extends StatelessWidget {
         ],
       ),
       child: Text('tap and hold this text to see tooltip'),
+    );
+  }
+}
+
+class SnackBarExample extends StatelessWidget {
+  const SnackBarExample({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      child: const Text('show snackbar on click !'),
+      onPressed: () {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('awesome Snackbar !'),
+            action: SnackBarAction(
+              label: 'Action',
+              onPressed: () {},
+            ),
+          ),
+        );
+      },
     );
   }
 }
