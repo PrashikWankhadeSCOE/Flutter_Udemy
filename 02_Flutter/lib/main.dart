@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(title: const Text('Hello users !')),
+          appBar: AppBar(title: const Text("Prashik's app still in progress")),
           body: const Center(
             child: SnackBarExample(),
           ),
@@ -47,6 +47,8 @@ class TooltipSample extends StatelessWidget {
   }
 }
 
+//? Floating SnackBar
+
 class SnackBarExample extends StatelessWidget {
   const SnackBarExample({super.key});
   @override
@@ -56,10 +58,20 @@ class SnackBarExample extends StatelessWidget {
       onPressed: () {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: const Text('awesome Snackbar !'),
+            // content: const Text('awesome Snackbar !'),
             action: SnackBarAction(
               label: 'Action',
-              onPressed: () {},
+              onPressed: () {
+                //!code you want to execute on click of Action
+              },
+            ),
+            content: const Text('Awsome Snackbar !'),
+            duration: const Duration(seconds: 1),
+            width: 280,
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
             ),
           ),
         );
