@@ -17,15 +17,45 @@ class MyApp extends StatelessWidget {
             title: const Text("Prashik's app still in progress"),
             backgroundColor: Colors.amber,
           ),
-          body: Center(
-            child: Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(
-                  color: Colors.amber[200],
-                  borderRadius: BorderRadius.circular(10),
+          body: Container(
+            color: Colors.pink[900],
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  color: Colors.pink[300],
+                  child: const Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Text(
+                      'this is first column',
+                      style: TextStyle(
+                          color: Color.fromARGB(161, 111, 025, 58),
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
-                child: const Center(child: SnackBarExample())),
+                const SizedBox(
+                  height: 200,
+                  width: 300,
+                ),
+                Container(
+                  height: 100,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue,
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'this is second column',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => debugPrint('Clicked'),
