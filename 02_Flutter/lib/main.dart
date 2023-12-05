@@ -13,14 +13,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(title: const Text("Prashik's app still in progress")),
-          body: const Center(
-            child: SnackBarExample(),
+          appBar: AppBar(
+            title: const Text("Prashik's app still in progress"),
+            backgroundColor: Colors.amber,
+          ),
+          body: Center(
+            child: Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  color: Colors.amber[200],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Center(child: SnackBarExample())),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => debugPrint('Clicked'),
             tooltip: 'jast nko dabu tutan button ',
-            child: const Icon(Icons.account_circle),
+            child: const Icon(Icons.ac_unit_outlined),
           ),
         ));
   }
@@ -54,7 +64,11 @@ class SnackBarExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      child: const Text('show snackbar on click !'),
+      child: const Text(
+        'show snackbar on click !',
+        style: TextStyle(
+            color: Colors.black87, fontSize: 15, fontWeight: FontWeight.bold),
+      ),
       onPressed: () {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -65,7 +79,10 @@ class SnackBarExample extends StatelessWidget {
                 //!code you want to execute on click of Action
               },
             ),
-            content: const Text('Awsome Snackbar !'),
+            content: const Text(
+              'Awsome Snackbar !',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             duration: const Duration(seconds: 1),
             width: 280,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
