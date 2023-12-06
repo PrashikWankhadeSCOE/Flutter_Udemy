@@ -19,43 +19,7 @@ class MyApp extends StatelessWidget {
           ),
           body: Container(
             color: Colors.pink[900],
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              // crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  color: Colors.pink[300],
-                  child: const Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Text(
-                      'this is first column',
-                      style: TextStyle(
-                          color: Color.fromARGB(161, 111, 025, 58),
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 200,
-                  width: 300,
-                ),
-                Container(
-                  height: 100,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.blue,
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'this is second column',
-                      style: TextStyle(fontSize: 15),
-                    ),
-                  ),
-                )
-              ],
-            ),
+            child: const ColumnPaddingSizedboxSample(),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => debugPrint('Clicked'),
@@ -63,6 +27,79 @@ class MyApp extends StatelessWidget {
             child: const Icon(Icons.ac_unit_outlined),
           ),
         ));
+  }
+}
+
+class ColumnPaddingSizedboxSample extends StatelessWidget {
+  const ColumnPaddingSizedboxSample({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const Expanded(
+              child: Text(
+                'this is prashik -- flutter freelancer -- Leaving in Kalamb but now in pune ',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            Container(
+              height: 20,
+              width: 20,
+              color: Colors.blue,
+            ),
+            const SizedBox(
+              width: 15,
+            ),
+            Container(
+              height: 20,
+              width: 20,
+              color: Colors.green,
+            )
+          ],
+        ),
+        Container(
+          width: 500,
+          color: Colors.pink[300],
+          child: const Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Text(
+              'this is first column',
+              style: TextStyle(
+                  color: Color.fromARGB(161, 111, 025, 58),
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 200,
+          width: 300,
+        ),
+        Container(
+          height: 100,
+          width: 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.blue,
+          ),
+          child: const Center(
+            child: Text(
+              'this is second column',
+              style: TextStyle(fontSize: 15),
+            ),
+          ),
+        )
+      ],
+    );
   }
 }
 
