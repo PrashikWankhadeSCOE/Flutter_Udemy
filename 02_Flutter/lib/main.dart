@@ -80,10 +80,7 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(
-          height: 200,
-          width: 300,
-        ),
+        const SizedBox(),
         Container(
           height: 100,
           width: 100,
@@ -93,11 +90,27 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
           ),
           child: const Center(
             child: Text(
-              'this is second column',
+              'Hello world !',
               style: TextStyle(fontSize: 15),
             ),
           ),
-        )
+        ),
+        Stack(
+          children: [
+            SizedBox(
+                height: 200, width: 150, child: Image.asset("assets/max.jpeg")),
+            const Positioned(top: 50, left: 20, child: Text('prashik image')),
+          ],
+        ),
+        const SizedBox(
+          height: 100,
+          width: 100,
+          child: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://t4.ftcdn.net/jpg/01/17/35/17/240_F_117351782_ugRMzKUg8pz8ucKVqIPI1JzQSCItC0Hx.jpg'),
+          ),
+        ),
+        const Text('last column text')
       ],
     );
   }
