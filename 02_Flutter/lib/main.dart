@@ -18,8 +18,10 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.amber,
           ),
           body: Container(
-            color: Colors.pink[900],
-            child: const ColumnPaddingSizedboxSample(),
+            color: Colors.white,
+            child: const SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: ColumnPaddingSizedboxSample()),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () => debugPrint('Clicked'),
@@ -40,8 +42,11 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        const SizedBox(
+          height: 20,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -67,6 +72,9 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
             )
           ],
         ),
+        const SizedBox(
+          height: 20,
+        ),
         Container(
           width: 500,
           color: Colors.pink[300],
@@ -80,7 +88,9 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(),
+        const SizedBox(
+          height: 20,
+        ),
         Container(
           height: 100,
           width: 100,
@@ -95,12 +105,18 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(
+          height: 20,
+        ),
         Stack(
           children: [
             SizedBox(
                 height: 200, width: 150, child: Image.asset("assets/max.jpeg")),
             const Positioned(top: 50, left: 20, child: Text('prashik image')),
           ],
+        ),
+        const SizedBox(
+          height: 20,
         ),
         const SizedBox(
           height: 100,
@@ -110,7 +126,16 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
                 'https://t4.ftcdn.net/jpg/01/17/35/17/240_F_117351782_ugRMzKUg8pz8ucKVqIPI1JzQSCItC0Hx.jpg'),
           ),
         ),
-        const Text('last column text')
+        const SizedBox(
+          height: 20,
+        ),
+        Container(
+          height: 400,
+          width: 200,
+          color: Colors.orangeAccent,
+          child: const Align(
+              alignment: Alignment.topCenter, child: Text('peaceHolder')),
+        )
       ],
     );
   }
