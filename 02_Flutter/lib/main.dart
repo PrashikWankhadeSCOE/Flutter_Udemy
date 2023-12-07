@@ -95,7 +95,7 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
           height: 100,
           width: 100,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(30),
             color: Colors.blue,
           ),
           child: const Center(
@@ -130,12 +130,29 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
           height: 20,
         ),
         Container(
-          height: 400,
-          width: 200,
-          color: Colors.orangeAccent,
-          child: const Align(
-              alignment: Alignment.topCenter, child: Text('peaceHolder')),
-        )
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30.30),
+            color: Colors.deepOrange[700],
+          ),
+          height: MediaQuery.of(context).size.height / 5,
+          width: MediaQuery.of(context).size.width * 0.8,
+          child: const Center(child: Text('MediaQuery')),
+        ),
+        Container(
+          height: 300,
+          width: 300,
+          color: Colors.yellowAccent,
+          child: LayoutBuilder(
+            builder: (context, constraints) => Center(
+              child: Container(
+                height: constraints.maxHeight / 2,
+                width: constraints.maxWidth / 2,
+                color: Colors.deepPurple,
+                child: const Center(child: Text('Layout builder')),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
