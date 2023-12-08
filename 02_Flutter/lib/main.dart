@@ -158,63 +158,63 @@ class ColumnPaddingSizedboxSample extends StatelessWidget {
   }
 }
 
-class TooltipSample extends StatelessWidget {
-  const TooltipSample({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const Tooltip(
-      richMessage: TextSpan(
-        text: 'I am a rich tooltip how am i looking ',
-        style: TextStyle(color: Colors.red),
-        children: <InlineSpan>[
-          TextSpan(
-            text:
-                'I am another span of this rich tooltip and i am different ie bold',
-            style: TextStyle(fontWeight: FontWeight.w900),
-          ),
-        ],
-      ),
-      child: Text('tap and hold this text to see tooltip'),
-    );
-  }
-}
+// class TooltipSample extends StatelessWidget {
+//   const TooltipSample({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Tooltip(
+//       richMessage: TextSpan(
+//         text: 'I am a rich tooltip how am i looking ',
+//         style: TextStyle(color: Colors.red),
+//         children: <InlineSpan>[
+//           TextSpan(
+//             text:
+//                 'I am another span of this rich tooltip and i am different ie bold',
+//             style: TextStyle(fontWeight: FontWeight.w900),
+//           ),
+//         ],
+//       ),
+//       child: Text('tap and hold this text to see tooltip'),
+//     );
+//   }
+// }
 
-//? Floating SnackBar
+// //? Floating SnackBar
 
-class SnackBarExample extends StatelessWidget {
-  const SnackBarExample({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      child: const Text(
-        'show snackbar on click !',
-        style: TextStyle(
-            color: Colors.black87, fontSize: 15, fontWeight: FontWeight.bold),
-      ),
-      onPressed: () {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            // content: const Text('awesome Snackbar !'),
-            action: SnackBarAction(
-              label: 'Action',
-              onPressed: () {
-                //!code you want to execute on click of Action
-              },
-            ),
-            content: const Text(
-              'Awsome Snackbar !',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            duration: const Duration(seconds: 1),
-            width: 280,
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            behavior: SnackBarBehavior.floating,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
+// class SnackBarExample extends StatelessWidget {
+//   const SnackBarExample({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return ElevatedButton(
+//       child: const Text(
+//         'show snackbar on click !',
+//         style: TextStyle(
+//             color: Colors.black87, fontSize: 15, fontWeight: FontWeight.bold),
+//       ),
+//       onPressed: () {
+//         ScaffoldMessenger.of(context).showSnackBar(
+//           SnackBar(
+//             // content: const Text('awesome Snackbar !'),
+//             action: SnackBarAction(
+//               label: 'Action',
+//               onPressed: () {
+//                 //!code you want to execute on click of Action
+//               },
+//             ),
+//             content: const Text(
+//               'Awsome Snackbar !',
+//               style: TextStyle(fontWeight: FontWeight.bold),
+//             ),
+//             duration: const Duration(seconds: 1),
+//             width: 280,
+//             padding: const EdgeInsets.symmetric(horizontal: 8.0),
+//             behavior: SnackBarBehavior.floating,
+//             shape: RoundedRectangleBorder(
+//               borderRadius: BorderRadius.circular(10.0),
+//             ),
+//           ),
+//         );
+//       },
+//     );
+//   }
+// }
