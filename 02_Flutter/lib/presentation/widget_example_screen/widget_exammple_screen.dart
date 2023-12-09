@@ -5,6 +5,7 @@ import 'package:basics/presentation/widget_example_screen/widgets/media_query_ex
 import 'package:basics/presentation/widget_example_screen/widgets/network_image_example.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/row_expanded_example.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/stack_example.dart';
+import 'package:basics/presentation/widget_example_screen/widgets/button_example.dart';
 import 'package:flutter/material.dart';
 
 class WidgetExampleScreen extends StatelessWidget {
@@ -47,15 +48,13 @@ class WidgetExampleScreen extends StatelessWidget {
               ),
               MediaQueryExample(),
               SizedBox(
-                height: 20,
-              ),
-              SizedBox(
                 height: 40,
               ),
               LayoutBuilderExample(),
               SizedBox(
                 height: 40,
               ),
+              ButtonExample(),
             ],
           ),
         ),
