@@ -1,3 +1,4 @@
+import 'package:basics/presentation/components/custom_button.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/first_column_child.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/hello_world_widget.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/layout_builder_example.dart';
@@ -17,44 +18,54 @@ class WidgetExampleScreen extends StatelessWidget {
       appBar: AppBar(title: const Text("Flutter Basics")),
       body: Container(
         color: Colors.white,
-        child: const SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              RowExpandedExample(),
-              SizedBox(
+              const RowExpandedExample(),
+              const SizedBox(
                 height: 20,
               ),
-              FirstColumnChild(),
-              SizedBox(
+              const FirstColumnChild(),
+              const SizedBox(
                 height: 20,
               ),
-              HelloWorldWidget(),
-              SizedBox(
+              const HelloWorldWidget(),
+              const SizedBox(
                 height: 20,
               ),
-              StackExample(),
-              SizedBox(
+              const StackExample(),
+              const SizedBox(
                 height: 20,
               ),
-              NetworkImageExample(),
-              SizedBox(
+              const NetworkImageExample(),
+              const SizedBox(
                 height: 20,
               ),
-              MediaQueryExample(),
-              SizedBox(
+              const MediaQueryExample(),
+              const SizedBox(
                 height: 40,
               ),
-              LayoutBuilderExample(),
-              SizedBox(
+              const LayoutBuilderExample(),
+              const SizedBox(
                 height: 40,
               ),
-              ButtonExample(),
+              const ButtonExample(),
+              const SizedBox(
+                height: 20,
+              ),
+              CustomButton(
+                onTap: () {
+                  print("tapped");
+                },
+                icon: Icons.home,
+                iconColor: Colors.white,
+              ),
             ],
           ),
         ),
