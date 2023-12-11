@@ -4,8 +4,8 @@ import 'package:basics/presentation/widget_example_screen/widgets/hello_world_wi
 import 'package:basics/presentation/widget_example_screen/widgets/layout_builder_example.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/media_query_example.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/network_image_example.dart';
+import 'package:basics/presentation/widget_example_screen/widgets/person.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/row_expanded_example.dart';
-import 'package:basics/presentation/widget_example_screen/widgets/stack_example.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/button_example.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,23 @@ class WidgetExampleScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const StackExample(),
+              const Person(
+                  picUrl:
+                      'https://www.shutterstock.com/shutterstock/photos/1218518830/display_1500/stock-photo-couple-of-sheep-run-across-the-mountain-meadow-cloudy-autumn-weather-1218518830.jpg',
+                  age: '22',
+                  name: 'Prashik',
+                  country: 'India',
+                  job: 'Unemployeed'),
+              const SizedBox(
+                height: 20,
+              ),
+              const Person(
+                  picUrl:
+                      'https://www.shutterstock.com/shutterstock/photos/159086927/display_1500/stock-photo-black-rowan-berries-on-branches-with-red-leaves-on-an-abstract-background-of-autumn-159086927.jpg',
+                  age: '10',
+                  name: 'Kabir',
+                  country: 'India',
+                  job: '5th Standard'),
               const SizedBox(
                 height: 20,
               ),
