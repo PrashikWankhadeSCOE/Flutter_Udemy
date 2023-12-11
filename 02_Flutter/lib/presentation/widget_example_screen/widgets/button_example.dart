@@ -16,17 +16,25 @@ class ButtonExample extends StatelessWidget {
   }
 }
 
-class SwitchExample extends StatelessWidget {
+class SwitchExample extends StatefulWidget {
   const SwitchExample({
     super.key,
   });
 
   @override
+  State<SwitchExample> createState() => _SwitchExampleState();
+}
+
+class _SwitchExampleState extends State<SwitchExample> {
+  bool switchState = true;
+  @override
   Widget build(BuildContext context) {
     return Switch(
-      value: true,
+      value: switchState,
       onChanged: (value) {
-        print(value);
+        setState(() {
+          switchState = value;
+        });
       },
     );
   }
