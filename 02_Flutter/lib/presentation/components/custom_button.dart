@@ -37,3 +37,35 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+class CostumButtonGesture extends StatelessWidget {
+  final String text;
+  final Function() onTap;
+  const CostumButtonGesture(
+      {required this.onTap, required this.text, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 30,
+        width: 100,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          gradient: const LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            colors: [
+              Colors.orange,
+              Colors.lightBlue,
+            ],
+          ),
+        ),
+        child: Center(
+          child: Text(text),
+        ),
+      ),
+    );
+  }
+}
