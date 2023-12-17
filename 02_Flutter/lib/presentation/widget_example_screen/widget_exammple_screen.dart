@@ -15,9 +15,15 @@ class WidgetExampleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Flutter Basics")),
+      appBar: AppBar(
+          title: const Center(
+              child: Text(
+        "Flutter Basics",
+        style: TextStyle(
+          fontStyle: FontStyle.italic,
+        ),
+      ))),
       body: Container(
-        color: Colors.white,
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(

@@ -13,7 +13,14 @@ class _CounterScreenState extends State<CounterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Counter App'),
+        title: const Center(
+          child: Text(
+            'Counter App',
+            style: TextStyle(
+              fontStyle: FontStyle.italic,
+            ),
+          ),
+        ),
       ),
       body: Center(
         child: Text(
