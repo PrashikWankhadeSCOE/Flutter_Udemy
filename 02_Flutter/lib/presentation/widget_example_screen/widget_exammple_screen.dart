@@ -1,6 +1,4 @@
 import 'package:basics/presentation/components/custom_button.dart';
-import 'package:basics/presentation/navigtion_example_screens/screen_one.dart';
-import 'package:basics/presentation/navigtion_example_screens/screen_two.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/first_column_child.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/hello_world_widget.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/layout_builder_example.dart';
@@ -79,11 +77,9 @@ class WidgetExampleScreen extends StatelessWidget {
               ),
               CustomButton(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushNamed(
                     context,
-                    MaterialPageRoute(
-                      builder: ((context) => const ScreenOne()),
-                    ),
+                    '/screenOne',
                   );
                 },
                 icon: Icons.home,
@@ -96,10 +92,9 @@ class WidgetExampleScreen extends StatelessWidget {
                 text: 'GestureButton',
                 onTap: () {
                   // debugPrint('hello tapped');
-                  Navigator.push(
+                  Navigator.pushNamed(
                     context,
-                    MaterialPageRoute(
-                        builder: ((context) => const ScreenTwo())),
+                    '/screenTwo',
                   );
                 },
               ),
