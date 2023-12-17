@@ -1,4 +1,3 @@
-import 'package:basics/presentation/navigtion_example_screens/screen_one.dart';
 import 'package:flutter/material.dart';
 
 class ScreenTwo extends StatelessWidget {
@@ -15,17 +14,16 @@ class ScreenTwo extends StatelessWidget {
         ),
       ),
       body: Center(
-          child: TextButton(
-        child: const Text('Go to screen one'),
-        onPressed: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: ((context) => const ScreenOne()),
-            ),
-          );
-        },
-      )),
+        child: TextButton(
+          child: const Text('Go to screen one'),
+          onPressed: () {
+            Navigator.pushReplacementNamed(
+              context,
+              '/screenOne',
+            );
+          },
+        ),
+      ),
     );
   }
 }

@@ -3,6 +3,8 @@
 import 'package:basics/bottom_navigation.dart';
 import 'package:basics/presentation/counter/counter_screen.dart';
 import 'package:basics/presentation/list/list_screen.dart';
+import 'package:basics/presentation/navigtion_example_screens/screen_one.dart';
+import 'package:basics/presentation/navigtion_example_screens/screen_two.dart';
 import 'package:basics/presentation/widget_example_screen/widget_exammple_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +21,11 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(backgroundColor: Colors.amber)),
       debugShowCheckedModeBanner: false,
       home: const RootBottomNavigation(),
+      routes: <String, WidgetBuilder>{
+        '/root': (BuildContext context) => const RootBottomNavigation(),
+        '/screenOne': (BuildContext context) => const ScreenOne(),
+        '/screenTwo': (BuildContext context) => const ScreenTwo(),
+      },
     );
   }
 }

@@ -17,7 +17,10 @@ class ScreenOne extends StatelessWidget {
         child: TextButton(
           child: const Text('back button'),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.popUntil(
+              context,
+              ((route) => route.isFirst),
+            );
           },
         ),
       ),
