@@ -1,4 +1,7 @@
 import 'package:basics/application/theme_service.dart';
+import 'package:basics/presentation/theme_animation/widgets/moon.dart';
+import 'package:basics/presentation/theme_animation/widgets/star.dart';
+import 'package:basics/presentation/theme_animation/widgets/sun.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,11 +16,9 @@ class ThemeAnimationScreen extends StatelessWidget {
         title: const Text(
           'Theme Animation',
           style: TextStyle(
-              color: Colors.white,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold),
+              fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       ),
       body: Consumer<ThemeService>(
         builder: (context, themeService, child) {
@@ -27,12 +28,14 @@ class ThemeAnimationScreen extends StatelessWidget {
               child: Container(
                 height: 500,
                 decoration: BoxDecoration(
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
-                        color: Colors.grey,
-                        offset: Offset(0, 3),
-                        blurRadius: 5,
-                        spreadRadius: 10),
+                        color: themeService.isDarkModeOn
+                            ? Colors.black.withOpacity(0.7)
+                            : Colors.grey,
+                        offset: const Offset(0, 5),
+                        blurRadius: 10,
+                        spreadRadius: 3),
                   ],
                   borderRadius: BorderRadius.circular(16),
                   gradient: LinearGradient(
@@ -53,6 +56,104 @@ class ThemeAnimationScreen extends StatelessWidget {
                 ),
                 child: Stack(
                   children: [
+                    Positioned(
+                      top: 220,
+                      right: 50,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 200,
+                      right: 300,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 30,
+                      right: 210,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 30,
+                      right: 100,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 90,
+                      right: 50,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 70,
+                      right: 300,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 130,
+                      right: 250,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 150,
+                      right: 170,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 100,
+                      right: 200,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 250),
+                        child: const Star(),
+                      ),
+                    ),
+                    AnimatedPositioned(
+                      curve: Curves.easeOutCirc,
+                      duration: const Duration(milliseconds: 1000),
+                      top: themeService.isDarkModeOn ? 100 : 150,
+                      right: themeService.isDarkModeOn ? 100 : -40,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(milliseconds: 500),
+                        child: const Moon(),
+                      ),
+                    ),
+                    AnimatedPadding(
+                      duration: const Duration(milliseconds: 500),
+                      padding: EdgeInsets.only(
+                          top: themeService.isDarkModeOn ? 110 : 50),
+                      child: const Center(child: Sun()),
+                    ),
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
