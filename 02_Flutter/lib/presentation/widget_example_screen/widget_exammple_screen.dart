@@ -8,6 +8,8 @@ import 'package:basics/presentation/widget_example_screen/widgets/person.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/row_expanded_example.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/button_example.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:basics/application/theme_service.dart';
 
 class WidgetExampleScreen extends StatelessWidget {
   const WidgetExampleScreen({super.key});
@@ -112,7 +114,8 @@ class WidgetExampleScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => debugPrint('clicked'),
+        onPressed: () =>
+            Provider.of<ThemeService>(context, listen: false).toogleTheme(),
         child: const Icon(Icons.ac_unit),
       ),
     );
