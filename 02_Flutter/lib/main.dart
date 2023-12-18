@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+
     return Consumer<ThemeService>(
       builder: (context, themeService, child) {
         return MaterialApp(
@@ -39,6 +40,18 @@ class MyApp extends StatelessWidget {
             '/screenTwo': (BuildContext context) => const ScreenTwo(),
           },
         );
+
+    return MaterialApp(
+      themeMode: ThemeMode.dark,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      debugShowCheckedModeBanner: false,
+      home: const RootBottomNavigation(),
+      routes: <String, WidgetBuilder>{
+        '/root': (BuildContext context) => const RootBottomNavigation(),
+        '/screenOne': (BuildContext context) => const ScreenOne(),
+        '/screenTwo': (BuildContext context) => const ScreenTwo(),
+
       },
     );
   }
