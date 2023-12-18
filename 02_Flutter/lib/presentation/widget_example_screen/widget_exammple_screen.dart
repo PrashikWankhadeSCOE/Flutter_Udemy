@@ -7,9 +7,8 @@ import 'package:basics/presentation/widget_example_screen/widgets/network_image_
 import 'package:basics/presentation/widget_example_screen/widgets/person.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/row_expanded_example.dart';
 import 'package:basics/presentation/widget_example_screen/widgets/button_example.dart';
+import 'package:basics/presentation/widget_example_screen/widgets/snackbar_example.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:basics/application/theme_service.dart';
 
 class WidgetExampleScreen extends StatelessWidget {
   const WidgetExampleScreen({super.key});
@@ -79,6 +78,10 @@ class WidgetExampleScreen extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
+              const SnackBarExample(),
+              const SizedBox(
+                height: 40,
+              ),
               const ButtonExample(),
               const SizedBox(
                 height: 20,
@@ -114,8 +117,31 @@ class WidgetExampleScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () =>
-            Provider.of<ThemeService>(context, listen: false).toogleTheme(),
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              // content: const Text('awesome Snackbar !'),
+              action: SnackBarAction(
+                label: 'Action',
+                onPressed: () {
+                  //!code you want to execute on click of Action
+                },
+              ),
+              content: const Text(
+                'Awsome Snackbar !',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              duration: const Duration(seconds: 1),
+              width: 280,
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              behavior: SnackBarBehavior.floating,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ),
+          );
+        },
+        tooltip: 'click and see the snackbar',
         child: const Icon(Icons.ac_unit),
       ),
     );

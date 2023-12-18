@@ -4,7 +4,7 @@ class AppTheme {
   AppTheme._();
 
   static const _primaryColorLight = Colors.lightBlueAccent;
-  static const _primaryColorDark = Colors.lightGreenAccent;
+  static const _primaryColorDark = Color(0xFF303030);
 
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
@@ -18,6 +18,6 @@ class AppTheme {
       useMaterial3: true,
       colorScheme: ColorScheme.fromSeed(
         seedColor: _primaryColorDark,
-        brightness: Brightness.light,
+        brightness: Brightness.dark,
       ));
 }
