@@ -1,4 +1,5 @@
 import 'package:advisor/3_application/core/services/theme_service.dart';
+import 'package:advisor/3_application/pages/advice/advice_page.dart';
 import 'package:advisor/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
-        home: const Placeholder(),
+        home: const AdvicerPage(),
       );
     });
   }
