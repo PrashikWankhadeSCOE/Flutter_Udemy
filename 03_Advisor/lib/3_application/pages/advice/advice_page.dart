@@ -34,21 +34,19 @@ class AdvicerPage extends StatelessWidget {
             Expanded(
                 child: Center(
                     child: ErrorMessage(message: 'Oops Something gone wrong !!')
-                    /*
-                    AdviceField(
-                        advice: 'Example Advice -- Your day will be good !')
-*/
-                    /*
-              CircularProgressIndicator(
+
+                    //AdviceField(advice: 'Example Advice -- Your day will be good !')
+/*
+                  CircularProgressIndicator(
                 color: themeData.colorScheme.secondary,
               ),
-              */
-                    /*
-              Text(
+*/
+/*
+                  Text(
                 'Your advice is waiting for you here',
                 style: themeData.textTheme.bodyLarge,
               ),
-               */
+              */
                     )),
             SizedBox(height: 200, child: Center(child: CostumButton())),
           ],
