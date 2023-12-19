@@ -1,4 +1,6 @@
+import 'package:advisor/3_application/pages/advice/bloc/advicer_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CostumButton extends StatelessWidget {
   const CostumButton({super.key});
@@ -8,7 +10,7 @@ class CostumButton extends StatelessWidget {
     final themeData = Theme.of(context);
     return InkResponse(
       onTap: () {
-        debugPrint('Button Pressed -- will be implemented Later');
+        BlocProvider.of<AdvicerBloc>(context).add(AdviceRequestedEvent());
       },
       child: Material(
         elevation: 20,

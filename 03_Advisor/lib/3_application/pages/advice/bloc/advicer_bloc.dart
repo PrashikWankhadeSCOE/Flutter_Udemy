@@ -15,8 +15,11 @@ class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
       await Future.delayed(const Duration(seconds: 3), () => {});
       debugPrint('got advice');
 
-      emit(AdvicerStateLoaded(advice: 'Fake advice to a state bloc'));
-      //emit(AdvicerStateError(message: 'error message'));
+      emit(AdvicerStateLoaded(
+          advice:
+              'We cannot solve problems with the kind of thinking we employed when we came up with them.” — Albert Einstein'));
+      //emit(AdvicerStateError(
+      //    message: 'Please check your internet connection !'));
     });
   }
 }
