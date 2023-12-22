@@ -12,8 +12,9 @@ const _generalFailureMessage =
 const _cacheFailureMessage = '"Ups Cache Failure - Please Try again Later ! "';
 
 class AdvicerCubit extends Cubit<AdvicerCubitState> {
-  AdvicerCubit() : super(AdvicerInitial());
-  final AdviceUsecases adviceUsecases = AdviceUsecases();
+  final AdviceUsecases adviceUsecases;
+
+  AdvicerCubit({required this.adviceUsecases}) : super(AdvicerInitial());
 
   void adviceRequested() async {
     emit(AdvicerStateLoading());
