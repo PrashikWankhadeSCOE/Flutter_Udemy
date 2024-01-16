@@ -12,15 +12,13 @@ class AdvicerBloc extends Bloc<AdvicerEvent, AdvicerState> {
       emit(AdvicerStateLoading());
       // Execute buisiness logic
       // for example get an advice
+
       debugPrint('Fake get advice trigged');
       await Future.delayed(const Duration(seconds: 3), () => {});
       debugPrint('got advice');
 
-      emit(AdvicerStateLoaded(
-          advice:
-              'We cannot solve problems with the kind of thinking we employed when we came up with them.” — Albert Einstein'));
-      //emit(AdvicerStateError(
-      //    message: 'Please check your internet connection !'));
+      // emit(AdvicerStateLoaded(advice: 'fake advice'));
+      emit(AdvicerStateError(message: 'error message'));
     });
   }
 }

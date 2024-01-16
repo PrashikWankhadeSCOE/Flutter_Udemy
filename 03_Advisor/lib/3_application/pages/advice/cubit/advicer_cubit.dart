@@ -6,10 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 part 'advicer_state.dart';
 
-const _serverFailureMessage = "Upss API Error -- Please Try again later !! ";
-const _generalFailureMessage =
+const serverFailureMessage =
     '"Upps...  Some thing gone wrong !! Please Check your Internet Connection "';
-const _cacheFailureMessage = '"Ups Cache Failure - Please Try again Later ! "';
+const generalFailureMessage =
+    '"Upps...  Some thing gone wrong !! Please Check your Internet Connection "';
+const cacheFailureMessage = '"Ups Cache Failure - Please Try again Later ! "';
 
 class AdvicerCubit extends Cubit<AdvicerCubitState> {
   final AdviceUsecases adviceUsecases;
@@ -28,12 +29,12 @@ class AdvicerCubit extends Cubit<AdvicerCubitState> {
 
   String _mapFailuretoMessage(Failure failure) {
     switch (failure.runtimeType) {
-      case ServerFailure:
-        return _serverFailureMessage;
-      case CacheFailure:
-        return _cacheFailureMessage;
+      case ServerFailure _:
+        return serverFailureMessage;
+      case const (CacheFailure):
+        return cacheFailureMessage;
       default:
-        return _generalFailureMessage;
+        return generalFailureMessage;
     }
   }
 }
