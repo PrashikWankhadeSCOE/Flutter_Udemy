@@ -4,7 +4,6 @@ import 'package:advisor/1_domain/usecases/advice_usecases.dart';
 import 'package:advisor/3_application/pages/advice/cubit/advicer_cubit.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 
