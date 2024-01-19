@@ -49,28 +49,38 @@ class AdvicerPage extends StatelessWidget {
             Expanded(
               child: Center(
                 child: BlocBuilder<AdvicerCubit, AdvicerCubitState>(
-                    builder: (context, state) {
-                  if (state is AdvicerInitial) {
-                    return Text(
-                      'Your advice is waiting for you here',
-                      style: themeData.textTheme.bodyLarge,
-                    );
-                  } else if (state is AdvicerStateLoading) {
-                    return CircularProgressIndicator(
-                      color: themeData.colorScheme.secondary,
-                    );
-                  } else if (state is AdvicerStateLoaded) {
-                    return AdviceField(advice: state.advice);
-                  } else if (state is AdvicerStateError) {
-                    return ErrorMessage(message: state.message);
-                  } else {
-                    return const ErrorMessage(
-                        message: '"OOpps Something gone wrong !!"');
-                  }
-                }),
+                  builder: (context, state) {
+                    if (state is AdvicerInitial) {
+                      return Text(
+                        'Your advice is waiting for you here',
+                        style: themeData.textTheme.bodyLarge,
+                      );
+                    } else if (state is AdvicerStateLoading) {
+                      return CircularProgressIndicator(
+                        color: themeData.colorScheme.secondary,
+                      );
+                    } else if (state is AdvicerStateLoaded) {
+                      return AdviceField(advice: state.advice);
+                    } else if (state is AdvicerStateError) {
+                      return ErrorMessage(message: state.message);
+                    } else {
+                      return const ErrorMessage(
+                          message: '"OOpps Something gone wrong !!"');
+                    }
+                  },
+                ),
               ),
             ),
-            const SizedBox(height: 200, child: Center(child: CostumButton())),
+            SizedBox(
+              height: 200,
+              child: Center(
+                child: CostumButton(
+                  onTap: () {
+                    BlocProvider.of<AdvicerCubit>(context).adviceRequested();
+                  },
+                ),
+              ),
+            ),
           ],
         ),
       ),
