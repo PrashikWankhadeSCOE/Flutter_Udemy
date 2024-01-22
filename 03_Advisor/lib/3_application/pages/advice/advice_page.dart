@@ -76,7 +76,7 @@ class AdvicerPage extends StatelessWidget {
               child: Center(
                 child: CostumButton(
                   onTap: () {
-                    BlocProvider.of<AdvicerCubit>(context).adviceRequested();
+                    BlocProvider.of<AdvicerCubit>(context).adviceRequested;
                   },
                 ),
               ),
